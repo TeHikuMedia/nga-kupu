@@ -5,12 +5,12 @@ setup(name='taumahi',
       version='1.2',
       data_files=[('lib/python{}/dist-packages/taumahi_tūtira'.\
       		format(sys.version[0:3]), [
-      		 'taumahi_tūtira/kupu_kino_kūare_tohutō.txt',
-      		 'taumahi_tūtira/kupu_kino.txt',
-      		 'taumahi_tūtira/kupu_rangirua_kūare_tohutō.txt',
-      		 'taumahi_tūtira/kupu_rangirua.txt'])],
+      		 'taumahi/taumahi_tūtira/kupu_kino_kūare_tohutō.txt',
+      		 'taumahi/taumahi_tūtira/kupu_kino.txt',
+      		 'taumahi/taumahi_tūtira/kupu_rangirua_kūare_tohutō.txt',
+      		 'taumahi/taumahi_tūtira/kupu_rangirua.txt'])],
       description='Identify Māori words in text',
-      url='https://github.com/TeHikuMedia/nga-kupu',
+      url='https://github.com/utunga/nga-kupu',
       packages=['taumahi'],
       install_requires=[
           'yelp_uri','beautifulsoup4','pytest'
