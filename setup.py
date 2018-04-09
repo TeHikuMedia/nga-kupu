@@ -3,10 +3,19 @@ import sys
 
 setup(name='taumahi',
       version='1.2',
-      py_modules=['taumahi'],
-      data_files=[('lib/python{}/dist-packages/taumahi_tūtira'.format(sys.version[0:3]), ['taumahi_tūtira/kupu_kino_kūare_tohutō.txt', 'taumahi_tūtira/kupu_kino.txt',
-                                                                                          'taumahi_tūtira/kupu_rangirua_kūare_tohutō.txt', 'taumahi_tūtira/kupu_rangirua.txt'])]
-      )
+      data_files=[('lib/python{}/dist-packages/taumahi_tūtira'.\
+      		format(sys.version[0:3]), [
+      		 'taumahi_tūtira/kupu_kino_kūare_tohutō.txt',
+      		 'taumahi_tūtira/kupu_kino.txt',
+      		 'taumahi_tūtira/kupu_rangirua_kūare_tohutō.txt',
+      		 'taumahi_tūtira/kupu_rangirua.txt'])],
+      description='Identify Māori words in text',
+      url='https://github.com/TeHikuMedia/nga-kupu',
+      packages=['taumahi'],
+      install_requires=[
+          'yelp_uri','beautifulsoup4','pytest'
+      ],
+      zip_safe=False)
 
 # Uninstall:
 # cd /usr/local/lib/python3.*/dist-packages ; sudo rm -r taumahi*
