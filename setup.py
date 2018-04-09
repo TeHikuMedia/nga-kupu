@@ -15,6 +15,7 @@ setup(name='taumahi',
       install_requires=[
           'yelp_uri','beautifulsoup4','pytest'
       ],
+      include_package_data=True,
       zip_safe=False)
 
 # Uninstall:
