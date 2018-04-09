@@ -10,7 +10,7 @@ setup(name='taumahi',
       		 'taumahi/taumahi_tūtira/kupu_rangirua_kūare_tohutō.txt',
       		 'taumahi/taumahi_tūtira/kupu_rangirua.txt'])],
       description='Identify Māori words in text',
-      url='https://github.com/utunga/nga-kupu',
+      url='https://github.com/TeHikuMedia/nga-kupu',
       packages=['taumahi'],
       install_requires=[
           'yelp_uri','beautifulsoup4','pytest'
