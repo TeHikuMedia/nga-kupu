@@ -110,7 +110,7 @@ def hihira_raupapa_kupu(kupu_hou, tohutō):
     kupu_huarua = kupu_hou.lower()
     # If the macrons are not strict, they are removed for the best possibility of finding a match
     if tohutō:
-        kupu_huarua = kupu_huarua.translate(no_tohutō)
+        kupu_huarua = kupu_huarua.translate(kūare_tohutō)
     # Sets up an iterable of the word, and the word without double vowels to be searched.
     # This is because some texts use double vowels instead of macrons, and they return different search results.
     taurua = [kupu_huarua, whakatakitahi_oropuare(kupu_huarua)]
@@ -128,7 +128,7 @@ def hihira_raupapa_kupu(kupu_hou, tohutō):
         for taitara in tohu[:-2]:
             taitara = taitara.text.lower()
             # Removes capitals and macrons for the best chance of making a match
-            if kupu in (taitara.translate(no_tohutō).split() if tohutō else taitara.split()):
+            if kupu in (taitara.translate(kūare_tohutō).split() if tohutō else taitara.split()):
                 wāriutanga = True
                 break
             else:
