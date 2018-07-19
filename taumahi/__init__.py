@@ -10,6 +10,13 @@ orokati = "hkmnprtwŋƒ"
 kūare_tohutō = ''.maketrans({'ā': 'a', 'ē': 'e', 'ī': 'i', 'ō': 'o', 'ū': 'u'})
 arapū = "AaĀāEeĒēIiĪīOoŌōUuŪūHhKkMmNnPpRrTtWwŊŋƑƒ-"
 
+kupu_kino = ['aa', 'aaa', 'ae', 'aero', 'aere', 'aura', 'aurora', 'auto', 'automate', 'amature', 'ami', 'amino', 'anemia', 'anime', 'anita', 'ape', 'api', 'apo', 'area', 'arena', 'aria', 'aroma', 'atari', 'awake', 'aware', 'angie', 'eau', 'ee', 'ei', 'eia', 'eine', 'eo', 'eu', 'eureka', 'euro', 'europa', 'europe', 'emo', 'emu', 'era', 'erie', 'eta', 'engine', 'ie', 'ieee', 'ii', 'iii', 'iowa', 'iu', 'imo', 'initiate', 'ipo', 'ire', 'irene', 'itu', 'oa', 'oahu', 'oe', 'oo', 'ooo', 'ou', 'ohio', 'oki', 'omaha', 'opera', 'operate', 'orange', 'owe', 'u', 'uae', 'uu', 'uma', 'una', 'unaware', 'une', 'uni', 'unite', 'uno', 'urine', 'utopia', 'haiti', 'hanoi', 'hate', 'hawaii', 'hee', 'hehe', 'hero', 'hi', 'hike', 'hipaa', 'hire', 'hinge', 'ho', 'home', 'homo', 'howe', 'hu', 'humane', 'kauai', 'kane', 'karaoke', 'karate', 'kate', 'katie', 'kangaroo', 'ke', 'keno', 'korea', 'ku', 'ma', 'maine', 'maui', 'mauritania', 'manure', 'maria', 'mariana', 'marie', 'mario', 'marina', 'marine', 'maritime', 'mateo', 'mature', 'mango', 'memo', 'menu', 'meta', 'mi', 'mia', 'miami', 'mio', 'mike', 'mime', 'mini', 'miniature', 'minute', 'moo', 'moore', 'mona', 'mono', 'moto', 'mu', 'murakami', 'mute', 'na', 'naomi', 'nauru', 'name', 'nano', 'napa', 'nate', 'nato', 'nature', 'ne', 'neo', 'neu', 'nemo', 'nero', 'ni', 'nie', 'niue', 'nike', 'nina', 'nine', 'nite', 'no', 'noaa', 'nokia', 'nominate', 'nominee', 'nope', 'nora', 'note', 'nowhere', 'nu', 'nuke', 'pa', 'panama', 'panorama', 'patio', 'pe', 'pee', 'peoria', 'pete', 'petite', 'pi', 'piano', 'pie', 'pike', 'pipe', 'pirate', 'po', 'poe', 'pope', 'potato', 'pu', 'puma', 'ra', 'rao', 'ratio', 'range', 're', 'reiki', 'remake', 'remote', 'rename', 'rene', 'renee', 'reno', 'retire', 'ri', 'rio', 'ripe', 'rita', 'ro', 'roanoke', 'roe', 'roi', 'rookie', 'route', 'routine', 'romania', 'rome', 'romeo', 'rope', 'rotate', 'rowe', 'ru', 'rue', 'rupee', 'ta', 'taipei', 'tahoe', 'tape', 'tate', 'tee', 'tenure', 'ti', 'tie', 'time', 'to', 'too', 'tome', 'tone', 'toni', 'topeka', 'torino', 'tongue', 'tu', 'tue', 'tune', 'wa', 'we', 'wee', 'wei', 'were', 'wi', 'wie', 'wine', 'wipe', 'wire', 'wo', 'woo', 'woke', 'wore', 'wu', 'ngo', 'white', 'who', 'whore']
+
+kupu_kino_kūare_tohutō = ['a', 'au', 'auto', 'aka', 'ami', 'amino', 'ana', 'apo', 'are', 'ari', 'aria', 'ate', 'ati', 'awe', 'e', 'eo', 'emi', 'epa', 'era', 'i', 'ia', 'io', 'ipo', 'ira', 'ita', 'o', 'oi', 'ou', 'oki', 'one', 'ora', 'ore', 'oro', 'u', 'ui', 'uma', 'ha', 'hai', 'haute', 'haha', 'hama', 'hare', 'hate', 'hawaii', 'he', 'hee', 'hehe', 'here', 'hi', 'ho', 'hope', 'hu', 'hua', 'ka', 'kai', 'kara', 'ki', 'kia', 'kite', 'ko', 'korea', 'ma', 'mae', 'mao', 'mauritania', 'make', 'mama', 'mania', 'mara', 'mare', 'marie', 'marino', 'mate', 'manga', 'mango', 'me', 'mere', 'mimi', 'mine', 'mira', 'mo', 'moe', 'moi', 'moo', 'moore', 'mona', 'more', 'moto', 'mu', 'na', 'no', 'none', 'nuke', 'pa', 'panama', 'pane', 'papa', 'papua', 'para', 'patio', 'pe', 'pea', 'pee', 'pei', 'peru', 'pi', 'pine', 'puma', 'pure', 'ra', 'rae', 'rai', 'rao', 'rake', 'rama', 'rape', 'rare', 'rate', 're', 'rea', 'rei', 'rene', 'renee', 'ri', 'rita', 'rite', 'ro', 'roi', 'roma', 'romeo', 'rupee', 'ta', 'tai', 'tao', 'tau', 'take', 'tara', 'tata', 'tate', 'tango', 'tea', 'tee', 'tia', 'tina', 'tire', 'to', 'toe', 'too', 'tomato', 'tone', 'tori', 'torino', 'tote', 'tu', 'wake', 'ware', 'we', 'wee', 'wiki', 'wo', 'woo', 'ngo', 'where']
+
+kupu_rangirua = ['a', 'au', 'aka', 'amino', 'ana', 'apo', 'are', 'ari', 'ate', 'ati', 'awe', 'e', 'eo', 'emi', 'epa', 'i', 'ia', 'io', 'ipo', 'ira', 'ita', 'o', 'oi', 'one', 'ora', 'ore', 'oro', 'ui', 'uma', 'ha', 'hai', 'haute', 'haha', 'hama', 'hare', 'hawaii', 'he', 'hee', 'here', 'hope', 'hua', 'ka', 'kai', 'kara', 'ki', 'kia', 'kite', 'ko', 'mae', 'mao', 'make', 'mama', 'mania', 'mara', 'mare', 'marino', 'mate', 'manga', 'me', 'mere', 'mimi', 'mine', 'mira', 'mo', 'moe', 'moi', 'moo', 'moore', 'more', 'moto', 'none', 'nuke', 'panama', 'pane', 'papa', 'papua', 'para', 'pea', 'pei', 'peru', 'pine', 'pure', 'rae', 'rai', 'rake', 'rama', 'rape', 'rare', 'rate', 'rea', 'rei', 'rita', 'rite', 'roi', 'roma', 'rupee', 'tai', 'tao', 'tau', 'take', 'tara', 'tata', 'tango', 'tea', 'tee', 'tia', 'tina', 'tire', 'toe', 'tomato', 'tori', 'tote', 'wake', 'ware', 'wiki', 'where']
+
+kupu_rangirua_kūare_tohutō = ['a', 'au', 'auto', 'aka', 'ami', 'amino', 'ana', 'apo', 'are', 'ari', 'aria', 'ate', 'ati', 'awe', 'e', 'eo', 'emi', 'epa', 'era', 'i', 'ia', 'io', 'ipo', 'ira', 'ita', 'o', 'oi', 'ou', 'oki', 'one', 'ora', 'ore', 'oro', 'u', 'ui', 'uma', 'ha', 'hai', 'haute', 'haha', 'hama', 'hare', 'hate', 'hawaii', 'he', 'hee', 'hehe', 'here', 'hi', 'ho', 'hope', 'hu', 'hua', 'ka', 'kai', 'kara', 'ki', 'kia', 'kite', 'ko', 'korea', 'ma', 'mae', 'mao', 'mauritania', 'make', 'mama', 'mania', 'mara', 'mare', 'marie', 'marino', 'mate', 'manga', 'mango', 'me', 'mere', 'mimi', 'mine', 'mira', 'mo', 'moe', 'moi', 'moo', 'moore', 'mona', 'more', 'moto', 'mu', 'na', 'no', 'none', 'nuke', 'pa', 'panama', 'pane', 'papa', 'papua', 'para', 'patio', 'pe', 'pea', 'pee', 'pei', 'peru', 'pi', 'pine', 'puma', 'pure', 'ra', 'rae', 'rai', 'rao', 'rake', 'rama', 'rape', 'rare', 'rate', 're', 'rea', 'rei', 'rene', 'renee', 'ri', 'rita', 'rite', 'ro', 'roi', 'roma', 'romeo', 'rupee', 'ta', 'tai', 'tao', 'tau', 'take', 'tara', 'tata', 'tate', 'tango', 'tea', 'tee', 'tia', 'tina', 'tire', 'to', 'toe', 'too', 'tomato', 'tone', 'tori', 'torino', 'tote', 'tu', 'wake', 'ware', 'we', 'wee', 'wiki', 'wo', 'woo', 'ngo', 'where']
 
 def nahanaha(tūtira):
     # Takes a list of strings (e.g. output of kōmiri_kupu) and returns the
@@ -235,23 +242,10 @@ def tiki_ōrau(kōwae):
     return tatau_māori, tatau_rangirua, tatau_pākehā, tatau_tapeke, ōrau
 
 
-try:
-    root = __file__
-    if os.path.islink(root):
-        root = os.path.realpath(root)
-    dirpath = os.path.dirname(os.path.abspath(root)) + '/taumahi_tūtira'
-
-    # Reads the file lists of English and ambiguous words into list variables
-    filenames = ["/kupu_kino.txt", "/kupu_rangirua.txt", "/kupu_kino_kūare_tohutō.txt",
-                 "/kupu_rangirua_kūare_tohutō.txt"]
-    for pair in zip(keys, filenames):
-        with open(dirpath + pair[1], "r") as kōnae:
-            kupu_lists[pair[0]] = kōnae.read().split()
-except Exception as e:
-    print(e)
-    print("I'm sorry, but something is wrong.")
-    print("There is no __file__ variable. Please contact the author.")
-    sys.exit()
+tūtira_kupu = [kupu_kino, kupu_rangirua, kupu_kino_kūare_tohutō, 
+               kupu_rangirua_kūare_tohutō]
+for key, tūtira in zip(keys, tūtira_kupu):
+    kupu_lists[key] = tūtira
 
 # All following script is for cleaning raw text strings:
 
