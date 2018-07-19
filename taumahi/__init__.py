@@ -18,6 +18,7 @@ kupu_rangirua = ['a', 'au', 'aka', 'amino', 'ana', 'apo', 'are', 'ari', 'ate', '
 
 kupu_rangirua_kūare_tohutō = ['a', 'au', 'auto', 'aka', 'ami', 'amino', 'ana', 'apo', 'are', 'ari', 'aria', 'ate', 'ati', 'awe', 'e', 'eo', 'emi', 'epa', 'era', 'i', 'ia', 'io', 'ipo', 'ira', 'ita', 'o', 'oi', 'ou', 'oki', 'one', 'ora', 'ore', 'oro', 'u', 'ui', 'uma', 'ha', 'hai', 'haute', 'haha', 'hama', 'hare', 'hate', 'hawaii', 'he', 'hee', 'hehe', 'here', 'hi', 'ho', 'hope', 'hu', 'hua', 'ka', 'kai', 'kara', 'ki', 'kia', 'kite', 'ko', 'korea', 'ma', 'mae', 'mao', 'mauritania', 'make', 'mama', 'mania', 'mara', 'mare', 'marie', 'marino', 'mate', 'manga', 'mango', 'me', 'mere', 'mimi', 'mine', 'mira', 'mo', 'moe', 'moi', 'moo', 'moore', 'mona', 'more', 'moto', 'mu', 'na', 'no', 'none', 'nuke', 'pa', 'panama', 'pane', 'papa', 'papua', 'para', 'patio', 'pe', 'pea', 'pee', 'pei', 'peru', 'pi', 'pine', 'puma', 'pure', 'ra', 'rae', 'rai', 'rao', 'rake', 'rama', 'rape', 'rare', 'rate', 're', 'rea', 'rei', 'rene', 'renee', 'ri', 'rita', 'rite', 'ro', 'roi', 'roma', 'romeo', 'rupee', 'ta', 'tai', 'tao', 'tau', 'take', 'tara', 'tata', 'tate', 'tango', 'tea', 'tee', 'tia', 'tina', 'tire', 'to', 'toe', 'too', 'tomato', 'tone', 'tori', 'torino', 'tote', 'tu', 'wake', 'ware', 'we', 'wee', 'wiki', 'wo', 'woo', 'ngo', 'where']
 
+
 def nahanaha(tūtira):
     # Takes a list of strings (e.g. output of kōmiri_kupu) and returns the
     # list in Māori alphabetical order
@@ -52,6 +53,87 @@ def whakatakitahi(tauriterite):
 # Keys to the kupu_list dictionary:
 keys = ['pākehā', 'rangirua', 'pākehā_kūare_tohutō', 'rangirua_kūare_tohutō']
 kupu_lists = {}
+
+def kupu_māori(kupu_tōkau, tohutō=True):
+    '''
+    Returns a set of kupu pākehā found in a given plaintext.
+
+    Set tohutō = True to become sensitive to the presence of macrons when making the match
+    '''
+
+    # Splits the raw text along characters that a
+    kupu_hou = re.findall('(?!-)(?!{p}*--{p}*)({p}+)(?<!-)'.format(p='[a-zāēīōū\-’\']'), kupu_tōkau,
+                          flags=re.IGNORECASE)
+
+    # Gets the preferred word lists from the preloaded files, depending on
+    # The Boolean variable, as macronised and demacronised texts have different
+    # Stoplists (files that need to be accessed)
+    kupu_rangirua = kupu_lists[keys[1]] if tohutō else kupu_lists[keys[3]]
+    kupu_pākehā = kupu_lists[keys[0]] if tohutō else kupu_lists[keys[2]]
+
+    # Setting up the dictionaries in which the words in the text will be placed
+    huinga_māori = set()
+
+    # Puts each word through tests to determine which word frequency dictionary
+    # it should be referred to. Goes to the ambiguous dictionary if it's in the
+    # ambiguous list, goes to the Māori dictionary if it doesn't have consecutive
+    # consonants, doesn't end in a consnant, doesn't have any english letters
+    # and isn't one of the provided stop words. Otherwise it goes to the non-Māori
+    # dictionary. If this word hasn't been added to the dictionary, it does so,
+    # and adds a count for every time the corresponding word gets passed to the
+    # dictionary.
+
+    for kupu in kupu_hou:
+        hōputu_kupu = hōputu(kupu)
+        if ((kupu.lower() or kupu.lower().translate(kūare_tohutō)) in kupu_rangirua) or len(kupu) == 1:
+            continue
+        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) or (
+                hōputu_kupu[-1].lower() in orokati) or any(pūriki not in arapū for pūriki in hōputu_kupu.lower()) or (
+                          (kupu.lower() or whakatakitahi_oropuare(kupu)) in kupu_pākehā)):
+            if kupu not in huinga_māori:
+                huinga_māori.add(kupu)
+            continue
+
+    return huinga_māori
+
+def kupu_pākehā(kupu_tōkau, tohutō=True):
+    '''
+    Returns a set of kupu pākehā found in a given plaintext
+    '''
+
+    # Splits the raw text along characters that a
+    kupu_hou = re.findall('(?!-)(?!{p}*--{p}*)({p}+)(?<!-)'.format(p='[a-zāēīōū\-’\']'), kupu_tōkau,
+                          flags=re.IGNORECASE)
+
+    # Gets the preferred word lists from the preloaded files, depending on
+    # The Boolean variable, as macronised and demacronised texts have different
+    # Stoplists (files that need to be accessed)
+    kupu_rangirua = kupu_lists[keys[1]] if tohutō else kupu_lists[keys[3]]
+    kupu_pākehā = kupu_lists[keys[0]] if tohutō else kupu_lists[keys[2]]
+
+    # Puts each word through tests to determine which word frequency dictionary
+    # it should be referred to. Goes to the ambiguous dictionary if it's in the
+    # ambiguous list, goes to the Māori dictionary if it doesn't have consecutive
+    # consonants, doesn't end in a consnant, doesn't have any english letters
+    # and isn't one of the provided stop words. Otherwise it goes to the non-Māori
+    # dictionary. If this word hasn't been added to the dictionary, it does so,
+    # and adds a count for every time the corresponding word gets passed to the
+    # dictionary.
+
+    huinga_pākehā = set()
+    for kupu in kupu_hou:
+        hōputu_kupu = hōputu(kupu)
+        if ((kupu.lower() or kupu.lower().translate(kūare_tohutō)) in kupu_rangirua) or len(kupu) == 1:
+            continue
+        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) \
+            or (hōputu_kupu[-1].lower() in orokati)
+            or any(pūriki not in arapū for pūriki in hōputu_kupu.lower())
+            or ((kupu.lower() or whakatakitahi_oropuare(kupu)) in kupu_pākehā)):
+            continue
+        else:
+            if not kupu in huinga_pākehā:
+                huinga_pākehā.add(kupu)
+    return huinga_pākehā
 
 
 def kōmiri_kupu(kupu_tōkau, tohutō=True):
