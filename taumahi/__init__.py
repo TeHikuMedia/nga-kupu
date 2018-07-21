@@ -10,6 +10,14 @@ orokati = "hkmnprtwŋƒ"
 kūare_tohutō = ''.maketrans({'ā': 'a', 'ē': 'e', 'ī': 'i', 'ō': 'o', 'ū': 'u'})
 arapū = "AaĀāEeĒēIiĪīOoŌōUuŪūHhKkMmNnPpRrTtWwŊŋƑƒ-"
 
+kupu_kino = ['aa', 'aaa', 'ae', 'aero', 'aere', 'aura', 'aurora', 'auto', 'automate', 'amature', 'ami', 'amino', 'anemia', 'anime', 'anita', 'ape', 'api', 'apo', 'area', 'arena', 'aria', 'aroma', 'atari', 'awake', 'aware', 'angie', 'eau', 'ee', 'ei', 'eia', 'eine', 'eo', 'eu', 'eureka', 'euro', 'europa', 'europe', 'emo', 'emu', 'era', 'erie', 'eta', 'engine', 'ie', 'ieee', 'ii', 'iii', 'iowa', 'iu', 'imo', 'initiate', 'ipo', 'ire', 'irene', 'itu', 'oa', 'oahu', 'oe', 'oo', 'ooo', 'ou', 'ohio', 'oki', 'omaha', 'opera', 'operate', 'orange', 'owe', 'u', 'uae', 'uu', 'uma', 'una', 'unaware', 'une', 'uni', 'unite', 'uno', 'urine', 'utopia', 'haiti', 'hanoi', 'hate', 'hawaii', 'hee', 'hehe', 'hero', 'hi', 'hike', 'hipaa', 'hire', 'hinge', 'ho', 'home', 'homo', 'howe', 'hu', 'humane', 'kauai', 'kane', 'karaoke', 'karate', 'kate', 'katie', 'kangaroo', 'ke', 'keno', 'korea', 'ku', 'ma', 'maine', 'maui', 'mauritania', 'manure', 'maria', 'mariana', 'marie', 'mario', 'marina', 'marine', 'maritime', 'mateo', 'mature', 'mango', 'memo', 'menu', 'meta', 'mi', 'mia', 'miami', 'mio', 'mike', 'mime', 'mini', 'miniature', 'minute', 'moo', 'moore', 'mona', 'mono', 'moto', 'mu', 'murakami', 'mute', 'na', 'naomi', 'nauru', 'name', 'nano', 'napa', 'nate', 'nato', 'nature', 'ne', 'neo', 'neu', 'nemo', 'nero', 'ni', 'nie', 'niue', 'nike', 'nina', 'nine', 'nite', 'no', 'noaa', 'nokia', 'nominate', 'nominee', 'nope', 'nora', 'note', 'nowhere', 'nu', 'nuke', 'pa', 'panama', 'panorama', 'patio', 'pe', 'pee', 'peoria', 'pete', 'petite', 'pi', 'piano', 'pie', 'pike', 'pipe', 'pirate', 'po', 'poe', 'pope', 'potato', 'pu', 'puma', 'ra', 'rao', 'ratio', 'range', 're', 'reiki', 'remake', 'remote', 'rename', 'rene', 'renee', 'reno', 'retire', 'ri', 'rio', 'ripe', 'rita', 'ro', 'roanoke', 'roe', 'roi', 'rookie', 'route', 'routine', 'romania', 'rome', 'romeo', 'rope', 'rotate', 'rowe', 'ru', 'rue', 'rupee', 'ta', 'taipei', 'tahoe', 'tape', 'tate', 'tee', 'tenure', 'ti', 'tie', 'time', 'to', 'too', 'tome', 'tone', 'toni', 'topeka', 'torino', 'tongue', 'tu', 'tue', 'tune', 'wa', 'we', 'wee', 'wei', 'were', 'wi', 'wie', 'wine', 'wipe', 'wire', 'wo', 'woo', 'woke', 'wore', 'wu', 'ngo', 'white', 'who', 'whore']
+
+kupu_kino_kūare_tohutō = ['a', 'au', 'auto', 'aka', 'ami', 'amino', 'ana', 'apo', 'are', 'ari', 'aria', 'ate', 'ati', 'awe', 'e', 'eo', 'emi', 'epa', 'era', 'i', 'ia', 'io', 'ipo', 'ira', 'ita', 'o', 'oi', 'ou', 'oki', 'one', 'ora', 'ore', 'oro', 'u', 'ui', 'uma', 'ha', 'hai', 'haute', 'haha', 'hama', 'hare', 'hate', 'hawaii', 'he', 'hee', 'hehe', 'here', 'hi', 'ho', 'hope', 'hu', 'hua', 'ka', 'kai', 'kara', 'ki', 'kia', 'kite', 'ko', 'korea', 'ma', 'mae', 'mao', 'mauritania', 'make', 'mama', 'mania', 'mara', 'mare', 'marie', 'marino', 'mate', 'manga', 'mango', 'me', 'mere', 'mimi', 'mine', 'mira', 'mo', 'moe', 'moi', 'moo', 'moore', 'mona', 'more', 'moto', 'mu', 'na', 'no', 'none', 'nuke', 'pa', 'panama', 'pane', 'papa', 'papua', 'para', 'patio', 'pe', 'pea', 'pee', 'pei', 'peru', 'pi', 'pine', 'puma', 'pure', 'ra', 'rae', 'rai', 'rao', 'rake', 'rama', 'rape', 'rare', 'rate', 're', 'rea', 'rei', 'rene', 'renee', 'ri', 'rita', 'rite', 'ro', 'roi', 'roma', 'romeo', 'rupee', 'ta', 'tai', 'tao', 'tau', 'take', 'tara', 'tata', 'tate', 'tango', 'tea', 'tee', 'tia', 'tina', 'tire', 'to', 'toe', 'too', 'tomato', 'tone', 'tori', 'torino', 'tote', 'tu', 'wake', 'ware', 'we', 'wee', 'wiki', 'wo', 'woo', 'ngo', 'where']
+
+kupu_rangirua = ['a', 'au', 'aka', 'amino', 'ana', 'apo', 'are', 'ari', 'ate', 'ati', 'awe', 'e', 'eo', 'emi', 'epa', 'i', 'ia', 'io', 'ipo', 'ira', 'ita', 'o', 'oi', 'one', 'ora', 'ore', 'oro', 'ui', 'uma', 'ha', 'hai', 'haute', 'haha', 'hama', 'hare', 'hawaii', 'he', 'hee', 'here', 'hope', 'hua', 'ka', 'kai', 'kara', 'ki', 'kia', 'kite', 'ko', 'mae', 'mao', 'make', 'mama', 'mania', 'mara', 'mare', 'marino', 'mate', 'manga', 'me', 'mere', 'mimi', 'mine', 'mira', 'mo', 'moe', 'moi', 'moo', 'moore', 'more', 'moto', 'none', 'nuke', 'panama', 'pane', 'papa', 'papua', 'para', 'pea', 'pei', 'peru', 'pine', 'pure', 'rae', 'rai', 'rake', 'rama', 'rape', 'rare', 'rate', 'rea', 'rei', 'rita', 'rite', 'roi', 'roma', 'rupee', 'tai', 'tao', 'tau', 'take', 'tara', 'tata', 'tango', 'tea', 'tee', 'tia', 'tina', 'tire', 'toe', 'tomato', 'tori', 'tote', 'wake', 'ware', 'wiki', 'where']
+
+kupu_rangirua_kūare_tohutō = ['a', 'au', 'auto', 'aka', 'ami', 'amino', 'ana', 'apo', 'are', 'ari', 'aria', 'ate', 'ati', 'awe', 'e', 'eo', 'emi', 'epa', 'era', 'i', 'ia', 'io', 'ipo', 'ira', 'ita', 'o', 'oi', 'ou', 'oki', 'one', 'ora', 'ore', 'oro', 'u', 'ui', 'uma', 'ha', 'hai', 'haute', 'haha', 'hama', 'hare', 'hate', 'hawaii', 'he', 'hee', 'hehe', 'here', 'hi', 'ho', 'hope', 'hu', 'hua', 'ka', 'kai', 'kara', 'ki', 'kia', 'kite', 'ko', 'korea', 'ma', 'mae', 'mao', 'mauritania', 'make', 'mama', 'mania', 'mara', 'mare', 'marie', 'marino', 'mate', 'manga', 'mango', 'me', 'mere', 'mimi', 'mine', 'mira', 'mo', 'moe', 'moi', 'moo', 'moore', 'mona', 'more', 'moto', 'mu', 'na', 'no', 'none', 'nuke', 'pa', 'panama', 'pane', 'papa', 'papua', 'para', 'patio', 'pe', 'pea', 'pee', 'pei', 'peru', 'pi', 'pine', 'puma', 'pure', 'ra', 'rae', 'rai', 'rao', 'rake', 'rama', 'rape', 'rare', 'rate', 're', 'rea', 'rei', 'rene', 'renee', 'ri', 'rita', 'rite', 'ro', 'roi', 'roma', 'romeo', 'rupee', 'ta', 'tai', 'tao', 'tau', 'take', 'tara', 'tata', 'tate', 'tango', 'tea', 'tee', 'tia', 'tina', 'tire', 'to', 'toe', 'too', 'tomato', 'tone', 'tori', 'torino', 'tote', 'tu', 'wake', 'ware', 'we', 'wee', 'wiki', 'wo', 'woo', 'ngo', 'where']
+
 
 def nahanaha(tūtira):
     # Takes a list of strings (e.g. output of kōmiri_kupu) and returns the
@@ -45,6 +53,87 @@ def whakatakitahi(tauriterite):
 # Keys to the kupu_list dictionary:
 keys = ['pākehā', 'rangirua', 'pākehā_kūare_tohutō', 'rangirua_kūare_tohutō']
 kupu_lists = {}
+
+def kupu_māori(kupu_tōkau, tohutō=True):
+    '''
+    Returns a set of kupu pākehā found in a given plaintext.
+
+    Set tohutō = True to become sensitive to the presence of macrons when making the match
+    '''
+
+    # Splits the raw text along characters that a
+    kupu_hou = re.findall('(?!-)(?!{p}*--{p}*)({p}+)(?<!-)'.format(p='[a-zāēīōū\-’\']'), kupu_tōkau,
+                          flags=re.IGNORECASE)
+
+    # Gets the preferred word lists from the preloaded files, depending on
+    # The Boolean variable, as macronised and demacronised texts have different
+    # Stoplists (files that need to be accessed)
+    kupu_rangirua = kupu_lists[keys[1]] if tohutō else kupu_lists[keys[3]]
+    kupu_pākehā = kupu_lists[keys[0]] if tohutō else kupu_lists[keys[2]]
+
+    # Setting up the dictionaries in which the words in the text will be placed
+    huinga_māori = set()
+
+    # Puts each word through tests to determine which word frequency dictionary
+    # it should be referred to. Goes to the ambiguous dictionary if it's in the
+    # ambiguous list, goes to the Māori dictionary if it doesn't have consecutive
+    # consonants, doesn't end in a consnant, doesn't have any english letters
+    # and isn't one of the provided stop words. Otherwise it goes to the non-Māori
+    # dictionary. If this word hasn't been added to the dictionary, it does so,
+    # and adds a count for every time the corresponding word gets passed to the
+    # dictionary.
+
+    for kupu in kupu_hou:
+        hōputu_kupu = hōputu(kupu)
+        if ((kupu.lower() or kupu.lower().translate(kūare_tohutō)) in kupu_rangirua) or len(kupu) == 1:
+            continue
+        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) or (
+                hōputu_kupu[-1].lower() in orokati) or any(pūriki not in arapū for pūriki in hōputu_kupu.lower()) or (
+                          (kupu.lower() or whakatakitahi_oropuare(kupu)) in kupu_pākehā)):
+            if kupu not in huinga_māori:
+                huinga_māori.add(kupu)
+            continue
+
+    return huinga_māori
+
+def kupu_pākehā(kupu_tōkau, tohutō=True):
+    '''
+    Returns a set of kupu pākehā found in a given plaintext
+    '''
+
+    # Splits the raw text along characters that a
+    kupu_hou = re.findall('(?!-)(?!{p}*--{p}*)({p}+)(?<!-)'.format(p='[a-zāēīōū\-’\']'), kupu_tōkau,
+                          flags=re.IGNORECASE)
+
+    # Gets the preferred word lists from the preloaded files, depending on
+    # The Boolean variable, as macronised and demacronised texts have different
+    # Stoplists (files that need to be accessed)
+    kupu_rangirua = kupu_lists[keys[1]] if tohutō else kupu_lists[keys[3]]
+    kupu_pākehā = kupu_lists[keys[0]] if tohutō else kupu_lists[keys[2]]
+
+    # Puts each word through tests to determine which word frequency dictionary
+    # it should be referred to. Goes to the ambiguous dictionary if it's in the
+    # ambiguous list, goes to the Māori dictionary if it doesn't have consecutive
+    # consonants, doesn't end in a consnant, doesn't have any english letters
+    # and isn't one of the provided stop words. Otherwise it goes to the non-Māori
+    # dictionary. If this word hasn't been added to the dictionary, it does so,
+    # and adds a count for every time the corresponding word gets passed to the
+    # dictionary.
+
+    huinga_pākehā = set()
+    for kupu in kupu_hou:
+        hōputu_kupu = hōputu(kupu)
+        if ((kupu.lower() or kupu.lower().translate(kūare_tohutō)) in kupu_rangirua) or len(kupu) == 1:
+            continue
+        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) \
+            or (hōputu_kupu[-1].lower() in orokati)
+            or any(pūriki not in arapū for pūriki in hōputu_kupu.lower())
+            or ((kupu.lower() or whakatakitahi_oropuare(kupu)) in kupu_pākehā)):
+            continue
+        else:
+            if not kupu in huinga_pākehā:
+                huinga_pākehā.add(kupu)
+    return huinga_pākehā
 
 
 def kōmiri_kupu(kupu_tōkau, tohutō=True):
@@ -235,23 +324,10 @@ def tiki_ōrau(kōwae):
     return tatau_māori, tatau_rangirua, tatau_pākehā, tatau_tapeke, ōrau
 
 
-try:
-    root = __file__
-    if os.path.islink(root):
-        root = os.path.realpath(root)
-    dirpath = os.path.dirname(os.path.abspath(root)) + '/taumahi_tūtira'
-
-    # Reads the file lists of English and ambiguous words into list variables
-    filenames = ["/kupu_kino.txt", "/kupu_rangirua.txt", "/kupu_kino_kūare_tohutō.txt",
-                 "/kupu_rangirua_kūare_tohutō.txt"]
-    for pair in zip(keys, filenames):
-        with open(dirpath + pair[1], "r") as kōnae:
-            kupu_lists[pair[0]] = kōnae.read().split()
-except Exception as e:
-    print(e)
-    print("I'm sorry, but something is wrong.")
-    print("There is no __file__ variable. Please contact the author.")
-    sys.exit()
+tūtira_kupu = [kupu_kino, kupu_rangirua, kupu_kino_kūare_tohutō, 
+               kupu_rangirua_kūare_tohutō]
+for key, tūtira in zip(keys, tūtira_kupu):
+    kupu_lists[key] = tūtira
 
 # All following script is for cleaning raw text strings:
 
