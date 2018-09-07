@@ -1,6 +1,7 @@
 import re
 import os
 import sys
+import string
 from yelp_uri.encoding import recode_uri
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
@@ -26,13 +27,17 @@ def nahanaha(tūtira):
                                             hōputu(kupu)])
 
 
-def hōputu(kupu):
+def hōputu(kupu, normalize=True):
     # Replaces ng and wh, w', w’ with ŋ and ƒ respectively, since Māori
     # consonants are easier to deal with in unicode format. It may be passed
     # A list, dictionary, or string, and uses if statements to determine how
     # To replace the consonants of the constituent words, and wheter to return
     # A string or a list. The Boolean variable determines whether it's encoding
     # Or decoding (set False if decoding)
+
+    if normalize:
+        punct_regex = re.compile('[%s]' % re.escape(string.punctuation))
+        kupu = punct_regex.sub('', kupu)
 
     return re.sub(r'(w\')|(w’)|(wh)|(ng)|(W\')|(W’)|(Wh)|(Ng)|(WH)|(NG)', whakatakitahi, kupu)
 
