@@ -59,5 +59,6 @@ def test_kupu_pākehā():
     assert kupu_pākehā("tangata he ball") == set(["ball"])
 
 def test_punctuation():
-    assert kupu_pākehā('kaipupuri’') == set()
-    assert kupu_māori('kaipupuri’') == set(["kaipupuri’"])
+    assert kupu_pākehā('kaipupuri’’') == set()
+    assert kupu_māori('kaipupuri’’') == set(["kaipupuri’’"])
+    assert list(kōmiri_kupu("tangata he ball ’’")) == [{'tangata': 1}, {'he': 1, '’’': 1}, {'ball': 1}]
