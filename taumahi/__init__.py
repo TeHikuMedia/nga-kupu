@@ -1,7 +1,7 @@
 import re
 import os
 import sys
-import string
+from unicodedata import category
 from yelp_uri.encoding import recode_uri
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
@@ -36,8 +36,7 @@ def hōputu(kupu, normalize=True):
     # Or decoding (set False if decoding)
 
     if normalize:
-        punct_regex = re.compile('[%s]' % re.escape(string.punctuation))
-        kupu = punct_regex.sub('', kupu)
+        kupu = ''.join(ch for ch in kupu if category(ch)[0] != 'P')
 
     return re.sub(r'(w\')|(w’)|(wh)|(ng)|(W\')|(W’)|(Wh)|(Ng)|(WH)|(NG)', whakatakitahi, kupu)
 
