@@ -35,9 +35,18 @@ def test_hihira_raupapa_kupu():
 
 
 def test_hōputu():
-    assert hōputu('ngawha') == 'ŋaƒa' and hōputu('Wha') == 'Ƒa' and hōputu(
-        'Nga') == 'Ŋa' and hōputu('WHA') == 'ƑA' and hōputu('NGA') == 'ŊA'
+    assert hōputu('ngawha') == 'ŋaƒa'
+    assert hōputu('Wha') == 'Ƒa'
+    assert hōputu('Nga') == 'Ŋa'
+    assert hōputu('WHA') == 'ƑA'
+    assert hōputu('NGA') == 'ŊA'
 
+def test_hōputu_whakahou():
+    assert hōputu_whakahou('ŋaƒa') == 'ngawha'
+    assert hōputu_whakahou('Ƒa') == 'Wha'
+    assert hōputu_whakahou('Ŋa') == 'Nga'
+    assert hōputu_whakahou('ƑA') == 'WHA'
+    assert hōputu_whakahou('ŊA') == 'NGA'
 
 def test_nahanaha():
     assert nahanaha(['WHENUA', 'TANGATA']) == ['TANGATA', 'WHENUA']
@@ -57,6 +66,7 @@ def test_kupu_māori():
 
 def test_kupu_pākehā():
     assert kupu_pākehā("tangata he ball") == set(["ball"])
+    assert kupu_pākehā('r') == set('r')
 
 def test_punctuation():
     assert kupu_pākehā('kaipupuri’’') == set()

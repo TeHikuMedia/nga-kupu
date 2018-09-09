@@ -6,10 +6,12 @@ from yelp_uri.encoding import recode_uri
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
-oropuare = "aāeēiīoōuū"
-orokati = "hkmnprtwŋƒ"
+oropuare = "AĀEĒIĪOŌUŪaāeēiīoōuū"
+orokati = "HKMNPRTWŊƑhkmnprtwŋƒ"
 kūare_tohutō = ''.maketrans({'ā': 'a', 'ē': 'e', 'ī': 'i', 'ō': 'o', 'ū': 'u'})
-arapū = "AaĀāEeĒēIiĪīOoŌōUuŪūHhKkMmNnPpRrTtWwŊŋƑƒ-"
+arapū_pūmatua = 'AĀEĒIĪOŌUŪHKMNPRTWŊƑ'
+arapū_pūriki = 'aāeēiīoōuūhkmnprtwŋƒ'
+arapū = arapū_pūmatua + arapū_pūriki + "-"
 
 kupu_kino = ['aa', 'aaa', 'ae', 'aero', 'aere', 'aura', 'aurora', 'auto', 'automate', 'amature', 'ami', 'amino', 'anemia', 'anime', 'anita', 'ape', 'api', 'apo', 'area', 'arena', 'aria', 'aroma', 'atari', 'awake', 'aware', 'angie', 'eau', 'ee', 'ei', 'eia', 'eine', 'eo', 'eu', 'eureka', 'euro', 'europa', 'europe', 'emo', 'emu', 'era', 'erie', 'eta', 'engine', 'ie', 'ieee', 'ii', 'iii', 'iowa', 'iu', 'imo', 'initiate', 'ipo', 'ire', 'irene', 'itu', 'oa', 'oahu', 'oe', 'oo', 'ooo', 'ou', 'ohio', 'oki', 'omaha', 'opera', 'operate', 'orange', 'owe', 'u', 'uae', 'uu', 'uma', 'una', 'unaware', 'une', 'uni', 'unite', 'uno', 'urine', 'utopia', 'haiti', 'hanoi', 'hate', 'hawaii', 'hee', 'hehe', 'hero', 'hi', 'hike', 'hipaa', 'hire', 'hinge', 'ho', 'home', 'homo', 'howe', 'hu', 'humane', 'kauai', 'kane', 'karaoke', 'karate', 'kate', 'katie', 'kangaroo', 'ke', 'keno', 'korea', 'ku', 'ma', 'maine', 'maui', 'mauritania', 'manure', 'maria', 'mariana', 'marie', 'mario', 'marina', 'marine', 'maritime', 'mateo', 'mature', 'mango', 'memo', 'menu', 'meta', 'mi', 'mia', 'miami', 'mio', 'mike', 'mime', 'mini', 'miniature', 'minute', 'moo', 'moore', 'mona', 'mono', 'moto', 'mu', 'murakami', 'mute', 'na', 'naomi', 'nauru', 'name', 'nano', 'napa', 'nate', 'nato', 'nature', 'ne', 'neo', 'neu', 'nemo', 'nero', 'ni', 'nie', 'niue', 'nike', 'nina', 'nine', 'nite', 'no', 'noaa', 'nokia', 'nominate', 'nominee', 'nope', 'nora', 'note', 'nowhere', 'nu', 'nuke', 'pa', 'panama', 'panorama', 'patio', 'pe', 'pee', 'peoria', 'pete', 'petite', 'pi', 'piano', 'pie', 'pike', 'pipe', 'pirate', 'po', 'poe', 'pope', 'potato', 'pu', 'puma', 'ra', 'rao', 'ratio', 'range', 're', 'reiki', 'remake', 'remote', 'rename', 'rene', 'renee', 'reno', 'retire', 'ri', 'rio', 'ripe', 'rita', 'ro', 'roanoke', 'roe', 'roi', 'rookie', 'route', 'routine', 'romania', 'rome', 'romeo', 'rope', 'rotate', 'rowe', 'ru', 'rue', 'rupee', 'ta', 'taipei', 'tahoe', 'tape', 'tate', 'tee', 'tenure', 'ti', 'tie', 'time', 'to', 'too', 'tome', 'tone', 'toni', 'topeka', 'torino', 'tongue', 'tu', 'tue', 'tune', 'wa', 'we', 'wee', 'wei', 'were', 'wi', 'wie', 'wine', 'wipe', 'wire', 'wo', 'woo', 'woke', 'wore', 'wu', 'ngo', 'white', 'who', 'whore']
 
@@ -39,6 +41,31 @@ def hōputu(kupu, normalize=True):
         kupu = ''.join(ch for ch in kupu if category(ch)[0] != 'P')
 
     return re.sub(r'(w\')|(w’)|(wh)|(ng)|(W\')|(W’)|(Wh)|(Ng)|(WH)|(NG)', whakatakitahi, kupu)
+
+
+def hōputu_whakahou(kupu, normalize=True):
+
+    if normalize:
+        kupu = ''.join(ch for ch in kupu if category(ch)[0] != 'P')
+
+    def whakahou(tauriterite):
+        oro = tauriterite.group(0)
+        if oro[0] == ("Ŋ"):
+            if oro[1] == oro[1].upper():
+                return "NG" + oro[1]
+            else:
+                return "Ng" + oro[1]
+        elif oro == "ŋ":
+            return "ng"
+        elif oro[0] == "Ƒ":
+            if oro[1] == oro[1].upper():
+                return "WH" + oro[1]
+            else:
+                return "Wh" + oro[1]
+        else:
+            return "wh"
+
+    return re.sub(r'(Ŋ[{oropuare}])|(ŋ)|(Ƒ[{oropuare}])|(ƒ)'.format(oropuare=oropuare), whakahou, kupu)
 
 
 def whakatakitahi(tauriterite):
@@ -127,8 +154,9 @@ def kupu_pākehā(kupu_tōkau, tohutō=True):
     huinga_pākehā = set()
     for kupu in kupu_hou:
         hōputu_kupu = hōputu(kupu)
-        if ((kupu.lower() or kupu.lower().translate(kūare_tohutō)) in kupu_rangirua) \
-            or len(kupu) == 1 \
+        if kupu in orokati:
+            huinga_pākehā.add(kupu)
+        elif ((kupu.lower() or kupu.lower().translate(kūare_tohutō)) in kupu_rangirua) \
             or len(hōputu_kupu) == 0:
             continue
         elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) \
