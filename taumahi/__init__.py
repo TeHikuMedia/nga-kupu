@@ -205,7 +205,7 @@ def hihira_raupapa_kupu(kupu_hou, tohuto):
     # This is because some texts use double vowels instead of macrons, and they return different search results.
     taurua = [kupu_huarua, whakatakitahi_oropuare(kupu_huarua)]
     # Sets up the variable to be returned, it is changed if a result is found
-    wāriutanga = False
+    wariutanga = False
 
     for kupu in taurua:
         taukaea = recode_uri(
@@ -219,13 +219,13 @@ def hihira_raupapa_kupu(kupu_hou, tohuto):
             taitara = taitara.text.lower()
             # Removes capitals and macrons for the best chance of making a match
             if kupu in (taitara.translate(kuare_tohuto).split() if tohuto else taitara.split()):
-                wāriutanga = True
+                wariutanga = True
                 break
             else:
                 pass
 
-    print("Found " + kupu + ": " + str(wāriutanga))
-    return wāriutanga
+    print("Found " + kupu + ": " + str(wariutanga))
+    return wariutanga
 
 
 def hihira_raupapa(kupu_hou, tohuto=False):
