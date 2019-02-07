@@ -3,7 +3,7 @@ import re
 import os
 import sys
 from yelp_uri.encoding import recode_uri
-from urllib.request import urlopen
+from urllib import urlopen
 from bs4 import BeautifulSoup
 
 oropuare = "aāeēiīoōuū"
