@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 # Checks words that are considered 'māori' against maoridictionary.co.nz to
 # determine whether they are legitimate words
 from taumahi import hihira_raupapa, kōmiri_kupu
