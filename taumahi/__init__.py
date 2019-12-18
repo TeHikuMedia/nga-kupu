@@ -21,13 +21,13 @@ kupu_rangirua_kuare_tohuto = ['a', 'au', 'auto', 'aka', 'ami', 'amino', 'ana', '
 
 
 def nahanaha(tutira):
-    # Takes a list of strings (e.g. output of komiri_kupu) and returns the
+    # Takes a list of strings (e.g. output of kōmiri_kupu) and returns the
     # list in maori alphabetical order
     return sorted(tutira, key=lambda kupu: [arapu.index(puriki) if puriki in arapu else len(arapu) + 1 for puriki in
-                                            hoputu(kupu)])
+                                            hōputu(kupu)])
 
 
-def hoputu(kupu):
+def hōputu(kupu):
     # Replaces ng and wh, w', w’ with ŋ and ƒ respectively, since maori
     # consonants are easier to deal with in unicode format. It may be passed
     # A list, dictionary, or string, and uses if statements to determine how
@@ -55,7 +55,7 @@ def whakatakitahi(tauriterite):
 keys = ['pakeha', 'rangirua', 'pakeha_kuare_tohuto', 'rangirua_kuare_tohuto']
 kupu_lists = {}
 
-def kupu_maori(kupu_tokau, tohuto=True):
+def kupu_māori(kupu_tokau, tohuto=True):
     '''
     Returns a set of kupu pakeha found in a given plaintext.
 
@@ -63,7 +63,7 @@ def kupu_maori(kupu_tokau, tohuto=True):
     '''
 
     # Splits the raw text along characters that a
-    kupu_hou = re.findall('(?!-)(?!{p}*--{p}*)({p}+)(?<!-)'.format(p='[a-zāēīōū\-’\']'), kupu_tokau,
+    kupu_hou = re.findall('(?!-)(?!{p}*--{p}*)({p}+)(?<!-)'.format(p='[a-zāēīōū-’\']'), kupu_tokau,
                           flags=re.IGNORECASE)
 
     # Gets the preferred word lists from the preloaded files, depending on
@@ -85,11 +85,11 @@ def kupu_maori(kupu_tokau, tohuto=True):
     # dictionary.
 
     for kupu in kupu_hou:
-        hoputu_kupu = hoputu(kupu)
+        hōputu_kupu = hōputu(kupu)
         if ((kupu.lower() or kupu.lower().translate(kuare_tohuto)) in kupu_rangirua) or len(kupu) == 1:
             continue
-        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hoputu_kupu.lower()) or (
-                hoputu_kupu[-1].lower() in orokati) or any(puriki not in arapu for puriki in hoputu_kupu.lower()) or (
+        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) or (
+                hōputu_kupu[-1].lower() in orokati) or any(puriki not in arapu for puriki in hōputu_kupu.lower()) or (
                           (kupu.lower() or whakatakitahi_oropuare(kupu)) in kupu_pakeha)):
             if kupu not in huinga_maori:
                 huinga_maori.add(kupu)
@@ -97,13 +97,13 @@ def kupu_maori(kupu_tokau, tohuto=True):
 
     return huinga_maori
 
-def kupu_pakeha(kupu_tokau, tohuto=True):
+def kupu_pākehā(kupu_tokau, tohuto=True):
     '''
     Returns a set of kupu pakeha found in a given plaintext
     '''
 
     # Splits the raw text along characters that a
-    kupu_hou = re.findall('(?!-)(?!{p}*--{p}*)({p}+)(?<!-)'.format(p='[a-zāēīōū\-’\']'), kupu_tokau,
+    kupu_hou = re.findall('(?!-)(?!{p}*--{p}*)({p}+)(?<!-)'.format(p='[a-zāēīōū-’\']'), kupu_tokau,
                           flags=re.IGNORECASE)
 
     # Gets the preferred word lists from the preloaded files, depending on
@@ -123,12 +123,12 @@ def kupu_pakeha(kupu_tokau, tohuto=True):
 
     kupu_pakeha = set()
     for kupu in kupu_hou:
-        hoputu_kupu = hoputu(kupu)
+        hōputu_kupu = hōputu(kupu)
         if ((kupu.lower() or kupu.lower().translate(kuare_tohuto)) in kupu_rangirua) or len(kupu) == 1:
             continue
-        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hoputu_kupu.lower()) \
-            or (hoputu_kupu[-1].lower() in orokati)
-            or any(puriki not in arapu for puriki in hoputu_kupu.lower())
+        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) \
+            or (hōputu_kupu[-1].lower() in orokati)
+            or any(puriki not in arapu for puriki in hōputu_kupu.lower())
             or ((kupu.lower() or whakatakitahi_oropuare(kupu)) in kupu_pakeha)):
             continue
         else:
@@ -137,7 +137,7 @@ def kupu_pakeha(kupu_tokau, tohuto=True):
     return kupu_pakeha
 
 
-def komiri_kupu(kupu_tokau, tohuto=True):
+def kōmiri_kupu(kupu_tokau, tohuto=True):
     # Removes words that contain any English characters from the string above,
     # returns dictionaries of word counts for three categories of maori words:
     # maori, ambiguous, non-maori (pakeha)
@@ -166,14 +166,14 @@ def komiri_kupu(kupu_tokau, tohuto=True):
     # dictionary.
 
     for kupu in kupu_hou:
-        hoputu_kupu = hoputu(kupu)
+        hōputu_kupu = hōputu(kupu)
         if ((kupu.lower() or kupu.lower().translate(kuare_tohuto)) in kupu_rangirua) or len(kupu) == 1:
             if kupu not in raupapa_rangirua:
                 raupapa_rangirua[kupu] = 0
             raupapa_rangirua[kupu] += 1
             continue
-        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hoputu_kupu.lower()) or (
-                hoputu_kupu[-1].lower() in orokati) or any(puriki not in arapu for puriki in hoputu_kupu.lower()) or (
+        elif not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) or (
+                hōputu_kupu[-1].lower() in orokati) or any(puriki not in arapu for puriki in hōputu_kupu.lower()) or (
                           (kupu.lower() or whakatakitahi_oropuare(kupu)) in kupu_pakeha)):
             if kupu not in raupapa_maori:
                 raupapa_maori[kupu] = 0
@@ -244,7 +244,7 @@ def hihira_raupapa(kupu_hou, tohuto=False):
 
 
 def kupu_ratios(text, tohuto=True):
-    map_maori, map_ambiguous, map_other = komiri_kupu(text, tohuto)
+    map_maori, map_ambiguous, map_other = kōmiri_kupu(text, tohuto)
 
     nums = {'reo': sum(map_maori.values()),
             'ambiguous': sum(map_ambiguous.values()),
@@ -267,7 +267,7 @@ def get_percentage(reo, ambiguous, other):
         return 0
 
 
-def auaha_raupapa_tu(kupu_tokau, tohuto=True):
+def auaha_raupapa_tū(kupu_tokau, tohuto=True):
     # This function is used for making stoplists as it does not depend on any stoplists.
     # It finds all words in a string, and adds them to a dictionary depending on
     # Whether they look like maori words or not, and counts their frequency.
@@ -288,9 +288,9 @@ def auaha_raupapa_tu(kupu_tokau, tohuto=True):
     # every time the corresponding word gets passed to the dictionary.
 
     for kupu in kupu_hou:
-        hoputu_kupu = hoputu(kupu)
-        if not (re.compile("[{o}][{o}]".format(o=orokati)).search(hoputu_kupu.lower()) or (
-                hoputu_kupu[-1].lower() in orokati) or any(puriki not in arapu for puriki in hoputu_kupu.lower())):
+        hōputu_kupu = hōputu(kupu)
+        if not (re.compile("[{o}][{o}]".format(o=orokati)).search(hōputu_kupu.lower()) or (
+                hōputu_kupu[-1].lower() in orokati) or any(puriki not in arapu for puriki in hōputu_kupu.lower())):
             if kupu not in raupapa_maori:
                 raupapa_maori[kupu] = 0
             raupapa_maori[kupu] += 1
@@ -304,11 +304,11 @@ def auaha_raupapa_tu(kupu_tokau, tohuto=True):
 
 
 def tiki_orau(kowae):
-    # Uses the komiri_kupu function from the taumahi module to estimate how
+    # Uses the kōmiri_kupu function from the taumahi module to estimate how
     # Much of the text is maori. Input is a string of text, output is a percentage string
 
     # Gets the word frequency dictionaries for the input text
-    raupapa_maori, raupapa_rangirua, raupapa_pakeha = komiri_kupu(kowae, False)
+    raupapa_maori, raupapa_rangirua, raupapa_pakeha = kōmiri_kupu(kowae, False)
 
     # Calculates how many words of the maori and English dictionary there are
     tatau_maori = sum(raupapa_maori.values())
