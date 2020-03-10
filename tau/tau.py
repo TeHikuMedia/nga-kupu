@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from taumahi import *
 import re
 import csv

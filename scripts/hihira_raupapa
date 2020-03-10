@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/python3
 # Checks words that are considered 'māori' against maoridictionary.co.nz to
 # determine whether they are legitimate words
