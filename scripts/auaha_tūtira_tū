@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 # Makes the stop lists for use in kōmiri_kupu
 
 import context
