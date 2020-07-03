@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 # Returns a list of all māori words and tells the user what percentage of words
 # are considered 'english' or 'māori'
 

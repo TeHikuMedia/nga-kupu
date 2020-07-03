@@ -52,8 +52,10 @@ def test_auaha_raupapa_tū():
     assert list(auaha_raupapa_tū('tangata ball')) == [
         {'tangata': 1}, {'ball': 1}]
 
+
 def test_kupu_māori():
     assert kupu_māori("tangata he ball") == set(["tangata"])
+
 
 def test_kupu_pākehā():
     assert kupu_pākehā("tangata he ball") == set(["ball"])
